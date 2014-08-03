@@ -1,0 +1,9 @@
+[user]
+  name = Shun Takebayashi
+  email = shun@takebayashi.asia
+[color]
+  ui = auto
+[alias]
+  co = checkout
+  ci = commit
+  st = status
