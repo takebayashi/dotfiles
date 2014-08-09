@@ -1,3 +1,5 @@
+autoload -Uz add-zsh-hook
+
 # Environment Variables
 export PATH=$HOME/local/bin:$PATH
 export LANG=ja_JP.UTF-8
@@ -7,6 +9,18 @@ else
   export TERM=xterm-256color
 fi
 [[ -z "$HOSTNAME" ]] && export HOSTNAME=$(hostname)
+
+# Window Titles
+function winti_preexec() {
+  cmd=(${(s: :)${1}})
+  echo -ne "\ek$(echo $HOSTNAME | cut -d . -f 1):$cmd[1]\e\\"
+}
+add-zsh-hook preexec winti_preexec
+
+function winti_precmd() {
+  echo -ne "\ek$(echo $HOSTNAME | cut -d . -f 1)\e\\"
+}
+add-zsh-hook precmd winti_precmd
 
 # Options
 setopt auto_pushd
@@ -29,11 +43,12 @@ alias tmux='tmux -2'
 autoload -Uz vcs_info
 autoload -Uz colors
 colors
-precmd () {
+function prompt_precmd () {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
+add-zsh-hook precmd prompt_precmd
 PROMPT="[%{${fg[magenta]}%}${HOSTNAME}%{${reset_color}%}:%{${fg[cyan]}%}%~%{${reset_color}%}] %{${fg[yellow]}%}%%%{${reset_color}%} "
 PROMPT2="%{${fg[yellow]}%}>%{${reset_color}%} "
 SPROMPT="Do you mean %{${fg[red]}%}%r%{${reset_color}%}? [nyae] > "
