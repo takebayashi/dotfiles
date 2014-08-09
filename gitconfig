@@ -3,8 +3,13 @@
   email = shun@takebayashi.asia
 [color]
   ui = auto
+[merge]
+  tool = vimdiff
 [alias]
   co = checkout
   ci = commit
   st = status
   br = branch
+  history = log --graph --all --pretty='%C(yellow)%h %Cblue%ad%Creset %s %Cgreen%d%Creset' --date=relative
+[ghq]
+  root = ~/src
