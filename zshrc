@@ -41,6 +41,46 @@ SAVEHIST=100000
 
 ## ====================
 
+function peco-select-history() {
+  local tac
+  if which tac > /dev/null; then
+      tac="tac"
+  else
+      tac="tail -r"
+  fi
+  BUFFER=$(${=tac} $HISTFILE | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+function peco-select-directory() {
+  local current_buffer=$BUFFER
+  local selected_dir="$(find . -type d ! -path "*/.*"| peco)"
+  if [ -d "$selected_dir" ]; then
+    BUFFER="${current_buffer} \"${selected_dir}\""
+    CURSOR=$#BUFFER
+  fi
+  zle clear-screen
+}
+zle -N peco-select-directory
+bindkey '^a^d' peco-select-directory
+
+function peco-select-file() {
+  local current_buffer=$BUFFER
+  local selected_file="$(find . -type f ! -path "*/.*"| peco)"
+  if [ -f "$selected_file" ]; then
+    BUFFER="${current_buffer} \"${selected_file}\""
+    CURSOR=$#BUFFER
+  fi
+  zle clear-screen
+}
+zle -N peco-select-file
+bindkey '^a^f' peco-select-file
+
+## ====================
+
 # Scala
 export SCALA_HOME=$HOME/opt/scala-current
 export PATH=$SCALA_HOME/bin:$PATH
