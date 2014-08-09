@@ -21,12 +21,22 @@ compinit
 # Key Bindings
 bindkey -v
 
+# Aliases
+alias tmux='tmux -2'
+
 # Prompt
-autoload colors
+autoload -Uz vcs_info
+autoload -Uz colors
 colors
-PROMPT="[%{${fg[magenta]}%}${HOSTNAME}:%~%{${reset_color}%}] %{${fg[yellow]}%}%%%{${reset_color}%} "
+precmd () {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+PROMPT="[%{${fg[magenta]}%}${HOSTNAME}%{${reset_color}%}:%{${fg[cyan]}%}%~%{${reset_color}%}] %{${fg[yellow]}%}%%%{${reset_color}%} "
 PROMPT2="%{${fg[yellow]}%}>%{${reset_color}%} "
 SPROMPT="Do you mean %{${fg[red]}%}%r%{${reset_color}%}? [nyae] > "
+RPROMPT="%1(v|%F{green}%1v%f|)"
 setopt transient_rprompt
 
 # History
