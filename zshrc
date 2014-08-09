@@ -49,7 +49,9 @@ function prompt_precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 add-zsh-hook precmd prompt_precmd
-PROMPT="[%{${fg[magenta]}%}${HOSTNAME}%{${reset_color}%}:%{${fg[cyan]}%}%~%{${reset_color}%}] %{${fg[yellow]}%}%%%{${reset_color}%} "
+PROMPT_STATUS_OK=$'\U1F604'
+PROMPT_STATUS_WARN=$'\U1F621'
+PROMPT="[%{${fg[magenta]}%}${HOSTNAME}%{${reset_color}%}:%{${fg[cyan]}%}%~%{${reset_color}%}] %(?.%F{blue}$PROMPT_STATUS_OK%f.%F{red}$PROMPT_STATUS_WARN%f) %{${fg[yellow]}%}%%%{${reset_color}%} "
 PROMPT2="%{${fg[yellow]}%}>%{${reset_color}%} "
 SPROMPT="Do you mean %{${fg[red]}%}%r%{${reset_color}%}? [nyae] > "
 RPROMPT="%1(v|%F{green}%1v%f|)"
