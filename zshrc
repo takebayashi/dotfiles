@@ -1,5 +1,5 @@
 # Environment Variables
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/local/bin:$PATH
 export LANG=ja_JP.UTF-8
 if [ $TMUX ]; then
   export TERM=screen-256color
@@ -24,7 +24,7 @@ bindkey -v
 # Prompt
 autoload colors
 colors
-PROMPT="[%{${fg[magenta]}%}${HOSTNAME}%~%{${reset_color}%}] %{${fg[yellow]}%}%%%{${reset_color}%} "
+PROMPT="[%{${fg[magenta]}%}${HOSTNAME}:%~%{${reset_color}%}] %{${fg[yellow]}%}%%%{${reset_color}%} "
 PROMPT2="%{${fg[yellow]}%}>%{${reset_color}%} "
 SPROMPT="Do you mean %{${fg[red]}%}%r%{${reset_color}%}? [nyae] > "
 setopt transient_rprompt
@@ -36,5 +36,12 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey ^P history-beginning-search-backward-end
 bindkey ^N history-beginning-search-forward-end
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
+
+## ====================
+
+# Scala
+export SCALA_HOME=$HOME/opt/scala-current
+export PATH=$SCALA_HOME/bin:$PATH
+export PATH=$HOME/opt/sbt-current/bin:$PATH
