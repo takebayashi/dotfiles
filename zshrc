@@ -113,3 +113,6 @@ bindkey '^a^f' peco-select-file
 export SCALA_HOME=$HOME/opt/scala-current
 export PATH=$SCALA_HOME/bin:$PATH
 export PATH=$HOME/opt/sbt-current/bin:$PATH
+
+# Go
+export GOPATH=$HOME
