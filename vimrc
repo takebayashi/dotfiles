@@ -30,11 +30,18 @@ nmap <Leader><Leader> [unite]
 nnoremap [unite]u  :<C-u>Unite -no-split<Space>
 nnoremap <silent> [unite]f :<C-u>VimFiler -split -simple -winwidth=50 -toggle -quit<CR>
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> [unite]G :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+
 nmap [unite]h [unite-history]
 nnoremap <silent> [unite-history]c :<C-u>Unite history/command<CR>
 nnoremap <silent> [unite-history]s :<C-u>Unite history/search<CR>
+
 nmap [unite]r [unite-ref]
-nnoremap <silent> [unite-ref]p :<C-u>Unite ref/perldoc<CR>
+nnoremap <silent> [unite-ref]pl :<C-u>Unite ref/perldoc<CR>
+
+nmap [unite]R [unite-resume]
+nnoremap <silent> [unite-resume]g :<C-u>UniteResume search-buffer<CR>
 
 nnoremap <Leader>t :tabnext<CR>
 nnoremap <Leader>T :tabprevious<CR>
@@ -66,6 +73,12 @@ set nobackup
 
 nnoremap ; :
 nnoremap : ;
+
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 if has('mouse')
   set mouse=a
