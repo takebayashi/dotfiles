@@ -116,3 +116,15 @@ export PATH=$HOME/opt/sbt-current/bin:$PATH
 
 # Go
 export GOPATH=$HOME
+export PATH=$GOPATH/bin:$PATH
+function peco-select-ghq-repository() {
+  local current_buffer=$BUFFER
+  local selected_repo="$(ghq list --full-path | peco)"
+  if [ -d "$selected_repo" ]; then
+    BUFFER="${current_buffer} \"${selected_repo}\""
+    CURSOR=$#BUFFER
+  fi
+  zle clear-screen
+}
+zle -N peco-select-ghq-repository
+bindkey '^a^g' peco-select-ghq-repository
