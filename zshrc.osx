@@ -1,0 +1,7 @@
+if [ ! $(uname) = "Darwin" ]; then
+  return
+fi
+
+if [ -e /Applications/MacVim.app/Contents/MacOS/Vim ]; then
+  alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+fi

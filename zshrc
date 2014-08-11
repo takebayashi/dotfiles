@@ -128,3 +128,9 @@ function peco-select-ghq-repository() {
 }
 zle -N peco-select-ghq-repository
 bindkey '^a^g' peco-select-ghq-repository
+
+## ====================
+
+for RC in $(ls $HOME/.zshrc* | grep "^$HOME/\.zshrc\."); do
+  . $RC
+done

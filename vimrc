@@ -62,6 +62,7 @@ set shiftwidth=2
 
 set backspace=indent,eol,start
 
+set nobackup
 
 nnoremap ; :
 nnoremap : ;
