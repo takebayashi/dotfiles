@@ -129,6 +129,12 @@ function peco-select-ghq-repository() {
 zle -N peco-select-ghq-repository
 bindkey '^a^g' peco-select-ghq-repository
 
+# Ruby
+export PATH=$HOME/.rbenv/bin:$PATH
+if which rbenv > /dev/null; then
+  eval "$(rbenv init - --no-rehash zsh)"
+fi
+
 ## ====================
 
 for RC in $(ls $HOME/.zshrc* | grep "^$HOME/\.zshrc\."); do
