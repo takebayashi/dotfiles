@@ -30,8 +30,11 @@ setopt auto_list
 setopt correct
 
 # Completions
+if [ -d /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 autoload -Uz compinit
-compinit
+compinit -u
 
 # Key Bindings
 bindkey -v
