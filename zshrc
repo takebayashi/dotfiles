@@ -1,7 +1,7 @@
 autoload -Uz add-zsh-hook
 
 # Environment Variables
-export PATH=$HOME/local/bin:$PATH
+path=($HOME/local/bin(N-/) $path)
 export LANG=ja_JP.UTF-8
 if [ $TMUX ]; then
   export TERM=screen-256color
@@ -30,9 +30,7 @@ setopt auto_list
 setopt correct
 
 # Completions
-if [ -d /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath)
-fi
+fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 autoload -Uz compinit
 compinit -u
 
@@ -114,12 +112,11 @@ bindkey '^a^f' peco-select-file
 
 # Scala
 export SCALA_HOME=$HOME/opt/scala-current
-export PATH=$SCALA_HOME/bin:$PATH
-export PATH=$HOME/opt/sbt-current/bin:$PATH
+path=($SCALA_HOME/bin(N-/) $HOME/opt/sbt-current/bin(N-/) $path)
 
 # Go
 export GOPATH=$HOME
-export PATH=$GOPATH/bin:$PATH
+path=($GOPATH/bin(N-/) $path)
 function peco-select-ghq-repository() {
   local current_buffer=$BUFFER
   local selected_repo="$(ghq list --full-path | peco)"
@@ -133,7 +130,7 @@ zle -N peco-select-ghq-repository
 bindkey '^a^g' peco-select-ghq-repository
 
 # Ruby
-export PATH=$HOME/.rbenv/bin:$PATH
+path=($HOME/.rbenv/bin(N-/) $path)
 if which rbenv > /dev/null; then
   eval "$(rbenv init - --no-rehash zsh)"
 fi
