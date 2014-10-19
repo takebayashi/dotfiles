@@ -137,6 +137,6 @@ fi
 
 ## ====================
 
-for RC in $(ls $HOME/.zshrc* | grep "^$HOME/\.zshrc\."); do
+for RC in $(find $HOME/.dotfiles -maxdepth 1 -name 'zshrc.*'); do
   . $RC
 done
