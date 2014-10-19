@@ -1,3 +1,5 @@
+[core]
+  excludesfile = ~/.gitignore
 [user]
   name = Shun Takebayashi
   email = shun@takebayashi.asia
