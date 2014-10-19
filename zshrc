@@ -38,6 +38,8 @@ compinit -u
 bindkey -v
 
 # Aliases
+unalias -m '*'
+alias ll='ls -alF'
 alias tmux='tmux -2'
 
 # Prompt
