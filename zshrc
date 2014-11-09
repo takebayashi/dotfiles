@@ -137,6 +137,9 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init - --no-rehash zsh)"
 fi
 
+# Node.js
+path=($HOME/.nodebrew/current/bin(N-/) $path)
+
 ## ====================
 
 for RC in $(find $HOME/.dotfiles -maxdepth 1 -name 'zshrc.*'); do
