@@ -140,6 +140,12 @@ fi
 # Node.js
 path=($HOME/.nodebrew/current/bin(N-/) $path)
 
+# Perl
+path=($HOME/.plenv/bin(N-/) $path)
+if which plenv > /dev/null; then
+  eval "$(plenv init -)"
+fi
+
 ## ====================
 
 for RC in $(find $HOME/.dotfiles -maxdepth 1 -name 'zshrc.*'); do
