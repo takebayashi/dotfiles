@@ -112,6 +112,11 @@ bindkey '^a^f' peco-select-file
 
 ## ====================
 
+# Java
+if [ -e /usr/libexec/java_home ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
 # Scala
 export SCALA_HOME=$HOME/opt/scala-current
 path=($SCALA_HOME/bin(N-/) $HOME/opt/sbt-current/bin(N-/) $path)
