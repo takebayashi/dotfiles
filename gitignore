@@ -2,3 +2,6 @@
 
 .*.swp
 .*.un~
+
+.idea/
+*.iml
