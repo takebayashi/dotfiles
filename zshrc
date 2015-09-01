@@ -13,12 +13,12 @@ fi
 # Window Titles
 function winti_preexec() {
   cmd=(${(s: :)${1}})
-  echo -ne "\ek$(echo $HOSTNAME | cut -d . -f 1):$cmd[1]\e\\"
+  echo -ne "\ek$(echo $HOSTNAME | cut -d . -f 1):$(basename $PWD):$cmd[1]\e\\"
 }
 add-zsh-hook preexec winti_preexec
 
 function winti_precmd() {
-  echo -ne "\ek$(echo $HOSTNAME | cut -d . -f 1)\e\\"
+  echo -ne "\ek$(echo $HOSTNAME | cut -d . -f 1):$(basename $PWD)\e\\"
 }
 add-zsh-hook precmd winti_precmd
 
