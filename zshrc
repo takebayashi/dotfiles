@@ -146,7 +146,7 @@ fi
 path=($HOME/.nodebrew/current/bin(N-/) $path)
 
 # Perl
-path=($HOME/.plenv/bin(N-/) $path)
+path=($HOME/.plenv/shims(N-/) $path)
 if which plenv > /dev/null; then
   eval "$(plenv init - zsh)"
 fi
