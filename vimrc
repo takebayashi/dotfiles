@@ -10,6 +10,7 @@ NeoBundle 'Shougo/vimproc', {'build': {'mac': 'make -f make_mac.mak', 'linux': '
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/unite-build'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/vimfiler'
@@ -32,6 +33,7 @@ nmap <Leader><Leader> [unite]
 nnoremap [unite]u  :<C-u>Unite -no-split<Space>
 nnoremap <silent> [unite]f :<C-u>VimFiler -split -simple -winwidth=50 -toggle -quit<CR>
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]m :<C-u>Unite build<CR>
 nnoremap <silent> [unite]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> [unite]G :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 
