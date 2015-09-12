@@ -6,7 +6,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/vimproc', {'build': {'mac': 'make -f make_mac.mak', 'unix': 'make -f make_unix.mak'}}
+NeoBundle 'Shougo/vimproc', {'build': {'mac': 'make -f make_mac.mak', 'linux': 'make', 'unix': 'make -f make_unix.mak'}}
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'Shougo/unite-outline'
