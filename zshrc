@@ -151,6 +151,12 @@ if which plenv > /dev/null; then
   eval "$(plenv init - zsh)"
 fi
 
+# Google Cloud
+if [ -d $HOME/opt/google-cloud-sdk ]; then
+  source $HOME/opt/google-cloud-sdk/path.zsh.inc
+  source $HOME/opt/google-cloud-sdk/completion.zsh.inc
+fi
+
 ## ====================
 
 for RC in $(find $HOME/.dotfiles -maxdepth 1 -name 'zshrc.*'); do
