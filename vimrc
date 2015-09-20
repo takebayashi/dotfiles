@@ -15,7 +15,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'tomasr/molokai'
+NeoBundle 'altercation/vim-colors-solarized'
 call neobundle#end()
 
 let g:neocomplcache_enable_at_startup = 1
@@ -55,7 +55,8 @@ syntax on
 
 NeoBundleCheck
 
-colorscheme molokai
+set background=dark
+colorscheme solarized
 
 set encoding=utf-8
 scriptencoding utf-8
