@@ -16,6 +16,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/a.vim'
 call neobundle#end()
 
 let g:neocomplcache_enable_at_startup = 1
@@ -32,10 +33,10 @@ nnoremap [unite] <Nop>
 nmap <Leader><Leader> [unite]
 nnoremap [unite]u  :<C-u>Unite -no-split<Space>
 nnoremap <silent> [unite]f :<C-u>VimFiler -split -simple -winwidth=50 -toggle -quit<CR>
-nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-nnoremap <silent> [unite]m :<C-u>Unite build<CR>
-nnoremap <silent> [unite]g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> [unite]G :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+nnoremap <silent> [unite]b :<C-u>Unite buffer -no-split<CR>
+nnoremap <silent> [unite]m :<C-u>Unite build -no-split<CR>
+nnoremap <silent> [unite]g :<C-u>Unite grep:. -no-split -buffer-name=search-buffer<CR>
+nnoremap <silent> [unite]G :<C-u>Unite grep:. -no-split -buffer-name=search-buffer<CR><C-R><C-W><CR>
 
 nmap [unite]h [unite-history]
 nnoremap <silent> [unite-history]c :<C-u>Unite history/command<CR>
