@@ -63,6 +63,9 @@ scriptencoding utf-8
 set number
 set relativenumber
 set ruler
+set showcmd
+set cursorline
+set lazyredraw
 
 set hlsearch
 
