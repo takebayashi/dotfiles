@@ -12,17 +12,15 @@ NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-build'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/a.vim'
 call neobundle#end()
 
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
 
 let g:unite_enable_split_vertically = 1
 let g:unite_winwidth = 50
