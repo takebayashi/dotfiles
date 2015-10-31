@@ -145,6 +145,12 @@ fi
 # Node.js
 path=($HOME/.nodebrew/current/bin(N-/) $path)
 
+# Python
+path=($HOME/.pyenv/shims(N-/) $path)
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+fi
+
 # Perl
 path=($HOME/.plenv/shims(N-/) $path)
 if which plenv > /dev/null; then
