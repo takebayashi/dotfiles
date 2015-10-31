@@ -91,3 +91,8 @@ endif
 if has('mouse')
   set mouse=a
 endif
+
+highlight DiffChange cterm=bold ctermfg=15 ctermbg=2
+highlight DiffDelete cterm=bold ctermfg=15 ctermbg=1
+highlight DiffAdd cterm=bold ctermfg=15 ctermbg=4
+highlight DiffText cterm=bold ctermfg=15 ctermbg=5

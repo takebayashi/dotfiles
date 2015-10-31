@@ -2,7 +2,9 @@ if [ ! $(uname) = "Darwin" ]; then
   return
 fi
 
-if [ -e /Applications/MacVim.app/Contents/MacOS/Vim ]; then
-  alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-  export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+MACVIM_BINDIR=/Applications/MacVim.app/Contents/MacOS
+if [ -d $MACVIM_BINDIR ]; then
+  path=($MACVIM_BINDIR(N-/) $path)
+  alias vim=Vim
+  export EDITOR=$MACVIM_BINDIR/Vim
 fi
