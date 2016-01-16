@@ -157,6 +157,12 @@ if which plenv > /dev/null; then
   eval "$(plenv init - zsh)"
 fi
 
+# Swift
+path=($HOME/.swiftenv/bin(N-/) $path)
+if which swiftenv > /dev/null; then
+  eval "$(swiftenv init - zsh)"
+fi
+
 # Google Cloud
 if [ -d $HOME/opt/google-cloud-sdk ]; then
   source $HOME/opt/google-cloud-sdk/path.zsh.inc
