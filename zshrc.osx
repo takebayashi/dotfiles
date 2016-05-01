@@ -8,3 +8,5 @@ if [ -d $MACVIM_BINDIR ]; then
   alias vim=Vim
   export EDITOR=$MACVIM_BINDIR/Vim
 fi
+
+export HOMEBREW_NO_ANALYTICS=1
