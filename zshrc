@@ -157,6 +157,12 @@ if which plenv > /dev/null; then
   eval "$(plenv init - zsh)"
 fi
 
+# Perl
+path=($HOME/.rakudobrew/bin(N-/) $path)
+if which rakudobrew > /dev/null; then
+  eval "$(rakudobrew init -)"
+fi
+
 # Swift
 path=($HOME/.swiftenv/bin(N-/) $path)
 if which swiftenv > /dev/null; then
