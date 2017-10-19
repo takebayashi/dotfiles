@@ -17,6 +17,8 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'racer-rust/vim-racer'
 call neobundle#end()
 
 let g:neocomplete#enable_at_startup = 1

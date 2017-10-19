@@ -136,6 +136,9 @@ function peco-select-ghq-repository() {
 zle -N peco-select-ghq-repository
 bindkey '^a^g' peco-select-ghq-repository
 
+# Rust
+path=($HOME/.cargo/bin(N-/) $path)
+
 # Ruby
 path=($HOME/.rbenv/bin(N-/) $path)
 if which rbenv > /dev/null; then
