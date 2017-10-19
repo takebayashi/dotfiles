@@ -149,13 +149,13 @@ fi
 path=($HOME/.nodebrew/current/bin(N-/) $path)
 
 # Python
-path=($HOME/.pyenv/shims(N-/) $path)
+path=($HOME/.pyenv/bin(N-/) $path)
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
 
 # Perl
-path=($HOME/.plenv/shims(N-/) $path)
+path=($HOME/.plenv/bin(N-/) $path)
 if which plenv > /dev/null; then
   eval "$(plenv init - zsh)"
 fi
