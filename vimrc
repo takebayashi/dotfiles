@@ -15,7 +15,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'dracula/vim'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'racer-rust/vim-racer'
@@ -56,8 +56,7 @@ syntax on
 
 NeoBundleCheck
 
-set background=dark
-colorscheme solarized
+colorscheme dracula
 
 set encoding=utf-8
 scriptencoding utf-8
